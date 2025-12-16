@@ -1,0 +1,18 @@
+h1 {
+  text-align: center;
+}
+.date{
+  width:100%;
+}
+
+.add-button{
+  min-width: 72.9141px;
+}
+
+input.input-button, input.input-date-button {
+  padding-left: 0px !important;
+}
+
+.todo-text, .todo-date {
+  text-align: left;
+}
