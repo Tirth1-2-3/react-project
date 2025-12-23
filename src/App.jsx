@@ -3,9 +3,21 @@ import TodoHeader from './components/TodoHeader';
 import TodoForm from './components/TodoForm';
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  let [todos, setTodos] = useState([]);
   let [textInput, setTextInput] = useState('');
   let [dateInput, setDateInput] = useState('');
+  function handleAddTodo(){
+    let newTodo = {
+      text: textInput,
+      date: dateInput
+    }
+    setTodos([...todos, newTodo])
+    setTextInput('')
+    setDateInput('')
+  }
+  function handleDeleteTodo(){
+
+  }
   return (
     <>
       <TodoHeader />
@@ -14,8 +26,12 @@ function App() {
         onTextChange={setTextInput}
         dateInput={dateInput}
         onDateChange={setDateInput}
+        handleAddTodo={handleAddTodo}
       />
-      {/* <TodoList /> */}
+      <TodoList 
+        todos={todos}
+        handleDeleteTodo={handleDeleteTodo}
+      />
     </>
   )
 }
