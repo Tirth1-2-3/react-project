@@ -1,17 +1,21 @@
 import { useState } from 'react';
-import TodoHeader from './components/todo-header';
-import Todo from './components/todo';
-import RenderTodo from './components/addtodo';
-import { items as initialItems } from './components/addtodo';
+import TodoHeader from './components/TodoHeader';
+import TodoForm from './components/TodoForm';
 
 function App() {
-  const [items, setItems] = useState(initialItems);
-
+  const [todos, setTodos] = useState([]);
+  let [textInput, setTextInput] = useState('');
+  let [dateInput, setDateInput] = useState('');
   return (
     <>
       <TodoHeader />
-      <Todo />
-      <RenderTodo items={items} setItems={setItems} />
+      <TodoForm 
+        textInput={textInput}
+        onTextChange={setTextInput}
+        dateInput={dateInput}
+        onDateChange={setDateInput}
+      />
+      {/* <TodoList /> */}
     </>
   )
 }
